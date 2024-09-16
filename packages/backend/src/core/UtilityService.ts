@@ -91,6 +91,7 @@ export class UtilityService {
 
 	@bindThis
 	public extractDbHost(uri: string): string {
+		if (uri.includes('bsky.brid.gy')) return 'bsky.brid.gy';
 		const url = new URL(uri);
 		return this.toPuny(url.hostname);
 	}
